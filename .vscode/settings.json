@@ -29,6 +29,7 @@
   "clang-format.style": "google",
   "cSpell.words": [
     "Iric",
+    "Postgresql",
     "nestjs",
     "prebuild",
     "precommit",
