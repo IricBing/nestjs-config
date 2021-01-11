@@ -1,4 +1,4 @@
-FROM node:14.15.0-alpine
+FROM node:14.15.4-alpine
 
 LABEL maintainer="Iric<iricbing@gmail.com>"
 
@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN yarn install
+RUN yarn install --prod
 
 EXPOSE 3000
 
