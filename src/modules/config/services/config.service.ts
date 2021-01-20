@@ -13,11 +13,11 @@ export class ConfigService {
       /** jwt token有效期，单位：毫秒 */
       jwtExpiresIn: this.nestConfigService.get<number>('common.jwtExpiresIn'),
       /** 是否打印用户活动日志 */
-      printUserActivityLog: this.nestConfigService.get<number>('common.printUserActivityLog'),
+      printUserActivityLog: this.nestConfigService.get<boolean>('common.printUserActivityLog'),
       /** 是否打印系统日志 */
-      printSystemLog: this.nestConfigService.get<number>('common.printSystemLog'),
+      printSystemLog: this.nestConfigService.get<boolean>('common.printSystemLog'),
       /** 密码盐 */
-      passwordSalt: this.nestConfigService.get<number>('common.passwordSalt'),
+      passwordSalt: this.nestConfigService.get<string>('common.passwordSalt'),
       /** 是否启用Swagger */
       enableSwagger: this.nestConfigService.get<boolean>('common.enableSwagger'),
       /** 程序占用端口号 */
