@@ -1,15 +1,15 @@
 import { Logger } from '@nestjs/common';
+import { ConfigType } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
+import { NestExpressApplication } from '@nestjs/platform-express';
 import { AppModule } from './app.module';
-import { ConfigModule } from './modules/config/config.module';
-import { ConfigProvider } from './modules/config/constants/config.constant';
-import { ConfigService } from './modules/config/services/config.service';
+import { CommonConfigRegister } from './modules/config/registers/common.register';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  const configService = app.select(ConfigModule).get<ConfigService>(ConfigProvider);
+  const app = await NestFactory.create<NestExpressApplication>(AppModule);
+  const commonConfig = app.select(AppModule).get<ConfigType<typeof CommonConfigRegister>>(CommonConfigRegister.KEY);
 
-  await app.listen(configService.common.port);
+  await app.listen(commonConfig.port);
 
   Logger.log(`服务已经启动:${await app.getUrl()}`);
 }

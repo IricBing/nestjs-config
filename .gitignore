@@ -1,6 +1,7 @@
 # compiled output
 /dist
 /node_modules
+/target
 
 # docker database folder
 /pg-data
@@ -11,7 +12,6 @@
 
 # ignore npm lock file, use yarn.lock
 package-lock.json
-
 # Logs
 logs
 *.log

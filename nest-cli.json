@@ -3,7 +3,10 @@
   "sourceRoot": "src",
   "compilerOptions": {
     "assets": [
-      "**/*.proto"
-    ]
+      "**/*.proto",
+      "**/*.graphql",
+      "**/*.prisma"
+    ],
+    "watchAssets": true
   }
 }
